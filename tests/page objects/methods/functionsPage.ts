@@ -25,6 +25,10 @@ export class FunctionsPage {
     }
 
     async checkValue(selector: string, value: string) {
-        await expect(this.page.locator(selector)).toHaveAttribute('value', value)
+        await expect(this.page.locator(selector)).toHaveAttribute('alt', value)
+    }
+
+    async elementIsClickeable(selector: string) {
+        await expect(this.page.locator(selector)).toBeEnabled();
     }
 }

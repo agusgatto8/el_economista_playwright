@@ -36,4 +36,14 @@ export class MethodsDataVerifyPage extends FunctionsPage {
         this.variable2 = '';
         this.variable3 = '';
     }
+
+    async veryfyElementsHomePage() {
+        await this.expectElementVisible(HomeLocatorsPage.titleHomePage);
+        await this.checkValue(HomeLocatorsPage.titleHomePage, 'elEconomista.es');
+        await this.expectElementVisible(HomeLocatorsPage.subscribeButton);
+        await this.checkTextElement(HomeLocatorsPage.subscribeButton, 'SUSCRÍBETE');
+        await this.expectElementVisible(HomeLocatorsPage.navBar);
+        await this.expectElementVisible(HomeLocatorsPage.marketsButton);
+        await this.elementIsClickeable(HomeLocatorsPage.marketsButton);
+    }
 }

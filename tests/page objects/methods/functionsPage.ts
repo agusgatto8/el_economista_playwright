@@ -23,4 +23,8 @@ export class FunctionsPage {
         await expect(this.page.locator(selector)).toHaveText(value);
         return (this.page.locator(selector)).textContent();
     }
+
+    async checkValue(selector: string, value: string) {
+        await expect(this.page.locator(selector)).toHaveAttribute('value', value)
+    }
 }

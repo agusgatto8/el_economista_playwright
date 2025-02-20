@@ -38,6 +38,9 @@ export class MethodsDataVerifyPage extends FunctionsPage {
     }
 
     async veryfyElementsHomePage() {
+        await this.expectElementVisible(HomeLocatorsPage.aceptCookiesButton);
+        await this.checkTextElement(HomeLocatorsPage.aceptCookiesButton, 'Aceptar');
+        await this.clickOn(HomeLocatorsPage.aceptCookiesButton);
         await this.expectElementVisible(HomeLocatorsPage.titleHomePage);
         await this.checkValue(HomeLocatorsPage.titleHomePage, 'elEconomista.es');
         await this.expectElementVisible(HomeLocatorsPage.subscribeButton);
@@ -45,5 +48,20 @@ export class MethodsDataVerifyPage extends FunctionsPage {
         await this.expectElementVisible(HomeLocatorsPage.navBar);
         await this.expectElementVisible(HomeLocatorsPage.marketsButton);
         await this.elementIsClickeable(HomeLocatorsPage.marketsButton);
+        await this.clickOn(HomeLocatorsPage.marketsButton);
+    }
+
+    async verifyElementsMarket() {
+        await this.expectElementVisible(MarketQuotationsLocatorsPage.titleMarkets);
+        await this.checkTextElement(MarketQuotationsLocatorsPage.titleMarkets, 'Mercados');
+        await this.expectElementVisible(MarketQuotationsLocatorsPage.rowToOptions);
+        await this.elementIsClickeable(MarketQuotationsLocatorsPage.rowToOptions);
+        await this.expectElementVisible(MarketQuotationsLocatorsPage.indexButton);
+        await this.elementIsClickeable(MarketQuotationsLocatorsPage.indexButton);
+        await this.clickOn(MarketQuotationsLocatorsPage.indexButton);
+    }
+
+    async saveValues() {
+        
     }
 }
